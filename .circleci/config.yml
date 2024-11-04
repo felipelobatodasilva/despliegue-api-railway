@@ -28,11 +28,8 @@ jobs:
       - run:
           name: Deploy to Railway App
           command: |
-            cd bankchurn-api
-            echo "$RAILWAY_TOKEN" | railway login --browserless 
-            railway link -p 26403c49-05bc-4918-9391-df43c695e978
-            railway up --detach
-
+            cd bankchurn-api 
+            railway up --service=06e28288-b9c0-4bad-a551-c8b7dc3e4bfc -d
 
 tags_only: &tags_only
   filters:
